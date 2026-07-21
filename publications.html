@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Andrew Marion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="site-title-row">
+    <a href="index.html" class="site-title">Engineering Portfolio: Andrew Marion</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="build.html">Build Projects</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html" class="active">Publications</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Papers, Talks &amp; Posters</div>
+    <h1>Publications</h1>
+    <p>Peer-reviewed papers, conference presentations, and posters from my work in KSU's Advanced Aerodynamics and Propulsion Lab.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="sec-num">Sheet 03</div><h2 class="sec-title">Publications &amp; Presentations</h2></div>
+    </div>
+
+    <div class="pub-list">
+
+      <div class="pub-item reveal">
+        <div class="pub-top"><span class="pub-tag">Journal / Conference Paper</span><span class="pub-date">January 2026</span></div>
+        <h3>Multi-Fidelity Validation of Control Surface Deflection Predictions Using FlightStream</h3>
+        <p class="pub-authors">Atkinson, Z., Comer, A., Marion, A., Sharma, G., Shahjahan, S., and Wilson, T.</p>
+        <p class="pub-venue">AIAA SciTech 2026 Forum</p>
+        <a class="pub-link" href="https://arc.aiaa.org/doi/10.2514/6.2026-2810" target="_blank" rel="noopener">doi.org/10.2514/6.2026-2810 →</a>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-top"><span class="pub-tag">Invited Presentation</span><span class="pub-date">May 2025</span></div>
+        <h3>Study of Compound Delta Wings and Kennesaw State Undergraduate Research Experience</h3>
+        <p class="pub-authors">Marion, A.</p>
+        <p class="pub-venue">Presented to the President's Community Advisory Board</p>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-top"><span class="pub-tag">Conference Paper</span><span class="pub-date">April 2025</span></div>
+        <h3>Numerical Study of Transonic Flow Characteristics Around a Compound Delta Wing</h3>
+        <p class="pub-authors">Marion, A., and Sharma, G.</p>
+        <p class="pub-venue">2025 AIAA Region II Student Conference</p>
+        <a class="pub-link" href="https://arc.aiaa.org/doi/10.2514/6.2025-97857" target="_blank" rel="noopener">doi.org/10.2514/6.2025-97857 →</a>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-top"><span class="pub-tag">Poster</span><span class="pub-date">May 2024</span></div>
+        <h3>Numerical Analysis of Vortex Breakdown Over a Compound Delta Wing</h3>
+        <p class="pub-authors">Marion, A., and Sharma, G.</p>
+        <p class="pub-venue">Symposium of Student Scholars</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>Let's talk hardware.</h3>
+      <p style="max-width:34ch; font-size:14.5px; margin-top:6px;">Open to design &amp; manufacturing roles, internships, and research collaboration.</p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:drew.marion03@gmail.com">drew.marion03@gmail.com</a>
+      <a href="tel:6786159817">678-615-9817</a>
+      <span>Marietta, GA</span>
+      <span>LinkedIn — Andrew Marion</span>
+      <span>Google Scholar — Andrew Marion</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Andrew Marion — Mechanical &amp; Aerospace Engineering</span>
+    <span>Rev. A · 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
