@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Andrew Marion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="site-title-row">
+    <a href="index.html" class="site-title">Engineering Portfolio: Andrew Marion</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="internships.html">Internships</a>
+    <a href="build.html">Build Projects</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="publications.html">Publications</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">CFD &amp; Aerodynamics</div>
+    <h1>Research</h1>
+    <p>Simulation work validated against wind-tunnel and experimental data, carried out in KSU's Advanced Aerodynamics and Propulsion Lab and published at AIAA conferences.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="sec-num">Sheet 02</div><h2 class="sec-title">CFD &amp; Aerodynamics</h2></div>
+    </div>
+
+    <div class="sheets">
+
+      <div class="sheet reveal" id="bwb">
+        <div class="photo-slot">
+          <img src="img/bwb-rans-flightstream.jpg" alt="RANS Spalart-Allmaras vs FlightStream pressure coefficient comparison on blended wing body aircraft">
+          <span class="fig">Fig. 01</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>Jan 2026 – Present</span></div>
+        <span class="stamp-tag">1st Author ×2</span>
+        <h3>Blended Wing Body vs. RANS CFD</h3>
+        <div class="org">Siemens FlightStream benchmarking</div>
+        <ul>
+          <li>Benchmarking FlightStream against RANS-based CFD for a blended wing body aircraft (BlendedNet++ dataset, Geometry 227; NACA 25118 / NASA SC(2)-0412 / NACA 0012 sections) in collaboration with Siemens</li>
+          <li>Assessing FlightStream's potential to accelerate simulation turnaround for early-stage aircraft concepts</li>
+          <li>Two papers accepted as first-author outputs to AIAA SciTech 2027</li>
+        </ul>
+        <div class="specs"><span class="spec">FlightStream</span><span class="spec">RANS CFD</span><span class="spec">AIAA SciTech 2027</span></div>
+      </div>
+
+      <div class="sheet reveal" id="delta">
+        <div class="photo-slot">
+          <img src="img/compound-delta-wing-poster.jpg" alt="Conference poster: Numerical Study of Transonic Flow Characteristics Around a Compound Delta Wing">
+          <span class="fig">Fig. 02</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>Sep 2023 – Present</span></div>
+        <span class="stamp-tag">1st Author</span>
+        <h3>Compound Delta Wing CFD</h3>
+        <div class="org">Vortex lift &amp; transonic performance</div>
+        <ul>
+          <li>Executed 140+ CFD simulations in ANSYS Fluent characterizing delta wing performance across velocities and angles of attack, improving lift-to-drag efficiency from 7.24% to 13.57% in the transonic regime</li>
+          <li>Investigated vortex lift modeling through trailing-edge boundary condition treatment; related laminar-regime work in Fluent and OpenFOAM at low Reynolds numbers</li>
+          <li>First-authored a paper presented at the 2025 AIAA Region II Student Conference</li>
+        </ul>
+        <div class="specs"><span class="spec">ANSYS Fluent</span><span class="spec">OpenFOAM</span><span class="spec">AIAA Region II</span></div>
+      </div>
+
+      <div class="sheet reveal">
+        <div class="photo-slot">
+          <img src="img/bird-uav-load-cell-test.jpg" alt="S2F-BD213 Bird UAV mounted on a 6-axis load cell during WindShape wind-tunnel control surface validation testing">
+          <span class="fig">Fig. 03</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>KSU × Oklahoma State S2FAR Lab</span><span>Mar 2025 – Present</span></div>
+        <span class="stamp-tag">Co-Author</span>
+        <h3>Control Surface Validation — "Bird" UAV</h3>
+        <div class="org">Multi-fidelity FlightStream validation</div>
+        <ul>
+          <li>Validated FlightStream aileron-deflection load predictions against high-fidelity CFD and WindShape wind-tunnel / load-cell testing on a Group-1 fixed-wing UAV (S2F-BD213)</li>
+          <li>Supported closed-loop roll-axis control validation using a Pixhawk Cube Orange Plus flight controller and a custom MATLAB/Simulink ground control station</li>
+          <li>Co-authored findings published at AIAA SciTech 2026 with Oklahoma State University's S2FAR Lab and Siemens</li>
+        </ul>
+        <div class="specs"><span class="spec">WindShape Tunnel</span><span class="spec">Pixhawk</span><span class="spec">AIAA SciTech 2026</span></div>
+      </div>
+
+      <div class="sheet reveal">
+        <div class="photo-slot">
+          <img src="img/forward-cavity-piv-cfd.jpg" alt="URANS CFD velocity contour of flow over a forward-facing cylindrical cavity">
+          <span class="fig">Fig. 04</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>In Progress</span></div>
+        <span class="stamp-tag">Design Phase</span>
+        <h3>Forward-Facing Cavity PIV Replication</h3>
+        <div class="org">URANS CFD vs. experimental PIV</div>
+        <ul>
+          <li>Running URANS CFD to replicate a forward-facing cylindrical cavity PIV experiment, working through timestep selection and Rossiter mode analysis</li>
+          <li>Coordinating validation questions directly with the study's experimentalist</li>
+        </ul>
+        <div class="specs"><span class="spec">URANS</span><span class="spec">Rossiter Modes</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>Let's talk hardware.</h3>
+      <p style="max-width:34ch; font-size:14.5px; margin-top:6px;">Open to design &amp; manufacturing roles, internships, and research collaboration.</p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:drew.marion03@gmail.com">drew.marion03@gmail.com</a>
+      <a href="tel:6786159817">678-615-9817</a>
+      <span>Marietta, GA</span>
+      <span>LinkedIn — Andrew Marion</span>
+      <span>Google Scholar — Andrew Marion</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Andrew Marion — Mechanical &amp; Aerospace Engineering</span>
+    <span>Rev. A · 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
