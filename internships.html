@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internships — Andrew Marion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="site-title-row">
+    <a href="index.html" class="site-title">Engineering Portfolio: Andrew Marion</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="build.html">Build Projects</a>
+    <a href="research.html">Research</a>
+    <a href="internships.html" class="active">Internships</a>
+    <a href="publications.html">Publications</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Industry Experience</div>
+    <h1>Internships</h1>
+    <p>Professional design and manufacturing experience applying engineering fundamentals in an industry setting.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="sec-num">Sheet 01</div><h2 class="sec-title">Industry Internships</h2></div>
+    </div>
+
+    <div class="sheets">
+
+      <div class="sheet reveal" id="textron">
+        <div class="photo-slot">
+          <img src="img/textron-tug-tractor.jpg" alt="Andrew Marion seated in a Textron TUG electric baggage tractor at Textron GSE, Cartersville, GA">
+          <span class="fig">Fig. 01</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>Textron GSE — Cartersville, GA</span><span>Jun–Aug 2026</span></div>
+        <span class="stamp-tag build">Internship</span>
+        <h3>Mechanical Design Engineer Intern</h3>
+        <div class="org">Ground support equipment electrification</div>
+        <ul>
+          <li>Designed assemblies in Siemens NX and produced build-ready drawings, including a hinged door for the MX4 electric baggage tractor and access doors for the 660 belt loader refresh — with hands-on sheet metal design and prototyping</li>
+          <li>Applied GD&amp;T and tolerance stack-up analysis alongside DFA/DFM reviews to validate manufacturability before production release</li>
+          <li>Ran fit checks and physical prototype testing, including parking-brake sensor location testing and access-door motion verification</li>
+        </ul>
+        <div class="specs"><span class="spec">Siemens NX</span><span class="spec">GD&amp;T</span><span class="spec">Sheet Metal</span><span class="spec">DFA/DFM</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>Let's talk hardware.</h3>
+      <p style="max-width:34ch; font-size:14.5px; margin-top:6px;">Open to design &amp; manufacturing roles, internships, and research collaboration.</p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:drew.marion03@gmail.com">drew.marion03@gmail.com</a>
+      <a href="tel:6786159817">678-615-9817</a>
+      <span>Marietta, GA</span>
+      <span>LinkedIn — Andrew Marion</span>
+      <span>Google Scholar — Andrew Marion</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Andrew Marion — Mechanical &amp; Aerospace Engineering</span>
+    <span>Rev. A · 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
