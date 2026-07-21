@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew Marion — Mechanical &amp; Aerospace Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEFF1;
+    --paper-2:#E2E6EA;
+    --navy:#122642;
+    --navy-2:#0C1C33;
+    --blue:#3E6690;
+    --blue-light:#9FC1DD;
+    --line-on-blue:#CFE3F2;
+    --ink:#1B2733;
+    --ink-soft:#4B5A6B;
+    --stamp:#B23A2F;
+    --stamp-soft:#E9D6D3;
+    --ok:#3E6E52;
+    --ok-soft:#D7E4DB;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* faint grid-paper texture */
+  .grid-bg{
+    background-image:
+      linear-gradient(rgba(62,102,144,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(62,102,144,0.07) 1px, transparent 1px);
+    background-size:28px 28px;
+  }
+
+  /* ============ TITLE BLOCK HEADER (signature element) ============ */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    color:var(--line-on-blue);
+    border-bottom:2px solid var(--blue);
+  }
+  .titleblock{
+    max-width:1180px; margin:0 auto;
+    display:grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.04em;
+  }
+  .tb-cell{
+    padding:10px 16px;
+    border-left:1px solid rgba(207,227,242,0.18);
+  }
+  .tb-cell:first-child{border-left:none;}
+  .tb-label{ color:var(--blue-light); text-transform:uppercase; font-size:9px; letter-spacing:0.12em; display:block; margin-bottom:3px;}
+  .tb-value{ color:#F4F8FB; font-weight:500;}
+  nav{
+    max-width:1180px; margin:0 auto;
+    display:flex; gap:0; overflow-x:auto;
+    border-top:1px solid rgba(207,227,242,0.18);
+  }
+  nav a{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:11px 18px; white-space:nowrap; text-decoration:none; color:var(--blue-light);
+    border-right:1px solid rgba(207,227,242,0.12);
+    transition:background .15s, color .15s;
+  }
+  nav a:hover, nav a:focus-visible{ background:rgba(159,193,221,0.12); color:#fff; outline:none;}
+
+  /* ============ HERO ============ */
+  .hero{
+    background:var(--navy-2);
+    color:#EAF1F7;
+    position:relative;
+    overflow:hidden;
+    padding:88px 24px 96px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(159,193,221,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(159,193,221,0.06) 1px, transparent 1px);
+    background-size:40px 40px;
+    pointer-events:none;
+  }
+  .hero-inner{ max-width:1180px; margin:0 auto; position:relative;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--blue-light); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:26px; height:1px; background:var(--blue-light);}
+  h1{
+    font-family:var(--sans); font-weight:800;
+    font-size:clamp(2.4rem, 5.5vw, 4.4rem);
+    line-height:1.03; letter-spacing:-0.01em;
+    max-width:900px;
+  }
+  .hero-sub{
+    font-size:clamp(1rem,1.6vw,1.2rem); color:var(--blue-light);
+    max-width:640px; margin-top:22px; font-weight:400;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:28px; margin-top:44px;
+    font-family:var(--mono); font-size:12.5px;
+  }
+  .hero-meta div span{ display:block;}
+  .hero-meta .k{ color:var(--blue-light); text-transform:uppercase; letter-spacing:.1em; font-size:10px; margin-bottom:4px;}
+  .hero-meta .v{ color:#fff;}
+  .hero-cta{ margin-top:46px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+    padding:13px 22px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--blue-light); color:#fff; transition:all .15s;
+  }
+  .btn:hover{ background:var(--blue-light); color:var(--navy-2);}
+  .btn.solid{ background:var(--stamp); border-color:var(--stamp); color:#fff;}
+  .btn.solid:hover{ background:#96302A; border-color:#96302A; color:#fff;}
+
+  /* ============ SECTION SHELL ============ */
+  section{ padding:88px 24px; }
+  .wrap{ max-width:1180px; margin:0 auto;}
+  .sec-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
+    margin-bottom:46px; flex-wrap:wrap;
+    border-bottom:2px solid var(--ink); padding-bottom:16px;
+  }
+  .sec-num{ font-family:var(--mono); font-size:12px; color:var(--stamp); letter-spacing:.1em;}
+  h2{
+    font-family:var(--sans); font-weight:800; font-size:clamp(1.7rem,3vw,2.4rem);
+    letter-spacing:-0.01em; margin-top:4px;
+  }
+  .sec-note{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); text-align:right; max-width:280px;}
+
+  /* ============ PROJECT "SHEET" CARDS ============ */
+  .sheets{ display:grid; gap:26px; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); }
+  .sheet{
+    background:#fff;
+    border:1.5px solid var(--ink);
+    position:relative;
+    padding:26px 24px 24px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .sheet:hover{ transform:translateY(-4px); box-shadow:8px 8px 0 rgba(18,38,66,0.12);}
+  .sheet::before, .sheet::after,
+  .sheet .tick-br, .sheet .tick-bl{
+    content:""; position:absolute; width:10px; height:10px; border-color:var(--blue); border-style:solid;
+  }
+  .sheet::before{ top:-1.5px; left:-1.5px; border-width:2px 0 0 2px;}
+  .sheet::after{ top:-1.5px; right:-1.5px; border-width:2px 2px 0 0;}
+  .tick-bl{ bottom:-1.5px; left:-1.5px; border-width:0 0 2px 2px;}
+  .tick-br{ bottom:-1.5px; right:-1.5px; border-width:0 2px 2px 0;}
+  .sheet-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:14px; padding-bottom:12px; border-bottom:1px dashed #B9C2CB;
+  }
+  .stamp-tag{
+    font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    padding:3px 8px; border:1.5px solid var(--ok); color:var(--ok); background:var(--ok-soft);
+    transform:rotate(-2deg); display:inline-block;
+  }
+  .stamp-tag.build{ border-color:var(--stamp); color:var(--stamp); background:var(--stamp-soft);}
+  .sheet h3{
+    font-family:var(--sans); font-size:1.22rem; font-weight:700; margin-bottom:6px; letter-spacing:-.005em;
+  }
+  .sheet .org{ font-family:var(--mono); font-size:11.5px; color:var(--blue); margin-bottom:14px;}
+  .sheet ul{ list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:16px;}
+  .sheet ul li{
+    font-size:14px; color:var(--ink); padding-left:16px; position:relative; line-height:1.5;
+  }
+  .sheet ul li::before{
+    content:"—"; position:absolute; left:0; color:var(--blue); font-weight:600;
+  }
+  .specs{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:14px; border-top:1px dashed #B9C2CB;
+  }
+  .spec{
+    font-family:var(--mono); font-size:10.5px; color:var(--ink-soft);
+    background:var(--paper-2); padding:4px 8px;
+  }
+
+  /* ============ SKILLS ============ */
+  .skill-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0; border-top:1.5px solid var(--ink); border-left:1.5px solid var(--ink);}
+  .skill-col{ border-right:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); padding:22px 22px;}
+  .skill-col h4{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em;
+    color:var(--stamp); margin-bottom:12px;
+  }
+  .skill-col p{ font-size:14.5px; color:var(--ink); line-height:1.65;}
+
+  /* ============ EDUCATION / ABOUT ============ */
+  .about-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:60px; align-items:start;}
+  .about-grid p{ font-size:16.5px; color:var(--ink); line-height:1.75; margin-bottom:18px; max-width:60ch;}
+  .edu-block{
+    background:#fff; border:1.5px solid var(--ink); padding:26px;
+  }
+  .edu-block .tb-label{ color:var(--stamp);}
+  .edu-row{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:12px; padding:9px 0; border-bottom:1px dashed #B9C2CB;}
+  .edu-row:last-child{ border-bottom:none;}
+  .edu-row .k{ color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em;}
+  .edu-row .v{ color:var(--ink); font-weight:600; text-align:right;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--navy-2); color:var(--blue-light); padding:64px 24px 36px;
+  }
+  .foot-grid{ max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px;}
+  footer h3{ color:#fff; font-family:var(--sans); font-size:1.7rem; font-weight:800; margin-bottom:14px;}
+  footer .contact-list{ font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:8px;}
+  footer .contact-list a{ text-decoration:none; color:var(--blue-light); transition:color .15s;}
+  footer .contact-list a:hover{ color:#fff;}
+  .foot-bottom{
+    max-width:1180px; margin:44px auto 0; padding-top:20px; border-top:1px solid rgba(159,193,221,0.18);
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; color:var(--blue); text-transform:uppercase;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease;}
+  .reveal.in{ opacity:1; transform:translateY(0);}
+
+  @media (max-width:820px){
+    .titleblock{ grid-template-columns:1fr 1fr; }
+    .tb-cell:nth-child(3), .tb-cell:nth-child(4), .tb-cell:nth-child(5){ display:none;}
+    .about-grid{ grid-template-columns:1fr;}
+    .hero{ padding:64px 20px 72px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto;}
+    .reveal{ transition:none; opacity:1; transform:none;}
+    .sheet{ transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="titleblock">
+    <div class="tb-cell">
+      <span class="tb-label">Document</span>
+      <span class="tb-value">Andrew Marion — Portfolio</span>
+    </div>
+    <div class="tb-cell">
+      <span class="tb-label">Discipline</span>
+      <span class="tb-value">Mech / Aero Eng.</span>
+    </div>
+    <div class="tb-cell">
+      <span class="tb-label">Scale</span>
+      <span class="tb-value">1 : 1</span>
+    </div>
+    <div class="tb-cell">
+      <span class="tb-label">Sheet</span>
+      <span class="tb-value">01 of 01</span>
+    </div>
+    <div class="tb-cell">
+      <span class="tb-label">Rev.</span>
+      <span class="tb-value">A — 2026</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#build">Build</a>
+    <a href="#research">Research</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero grid-bg">
+  <div class="hero-inner">
+    <div class="eyebrow">Mechanical Design &amp; Aerospace Engineering</div>
+    <h1>I build the hardware, then I prove it in the wind tunnel and the CFD solver.</h1>
+    <p class="hero-sub">Junior in Mechanical Engineering (Aerospace minor) at Kennesaw State University. Design-through-fabrication work on rocket propulsion, autonomous aircraft, and ground support equipment, paired with published CFD research on delta wings and blended-wing-body aerodynamics.</p>
+    <div class="hero-meta">
+      <div><span class="k">Based in</span><span class="v">Marietta, GA</span></div>
+      <div><span class="k">Grad. anticipated</span><span class="v">May 2027</span></div>
+      <div><span class="k">GPA</span><span class="v">3.81 / 4.0</span></div>
+      <div><span class="k">Eligibility</span><span class="v">U.S. Citizen</span></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn solid" href="mailto:drew.marion03@gmail.com">Email me</a>
+      <a class="btn" href="#build">See the build work</a>
+    </div>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">Sheet 01 — Hands-On Build</div>
+        <h2>Design → Fabrication → Test</h2>
+      </div>
+      <div class="sec-note">Hardware programs where I took a concept from CAD to a physical part on a bench or in the air.</div>
+    </div>
+
+    <div class="sheets">
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>Textron GSE — Cartersville, GA</span><span>Jun–Aug 2026</span></div>
+        <span class="stamp-tag build">Internship</span>
+        <h3>Mechanical Design Engineer Intern</h3>
+        <div class="org">Ground support equipment electrification</div>
+        <ul>
+          <li>Designed assemblies in Siemens NX and produced build-ready drawings, including a hinged door for the MX4 electric baggage tractor and access doors for the 660 belt loader refresh — with hands-on sheet metal design and prototyping</li>
+          <li>Applied GD&amp;T and tolerance stack-up analysis alongside DFA/DFM reviews to validate manufacturability before production release</li>
+          <li>Ran fit checks and physical prototype testing, including parking-brake sensor location testing and access-door motion verification</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">Siemens NX</span>
+          <span class="spec">GD&amp;T</span>
+          <span class="spec">Sheet Metal</span>
+          <span class="spec">DFA/DFM</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>Kennesaw Rocketry Team</span><span>Dec 2025 – Present</span></div>
+        <span class="stamp-tag build">Liquid Propulsion</span>
+        <h3>Bipropellant Rocket Engine</h3>
+        <div class="org">Vice President; previously Liquid Propulsion Lead</div>
+        <ul>
+          <li>Designing and sizing a N₂O / ethanol bipropellant engine targeting 250 lbf thrust at an O/F ratio of 4.8 — thrust equations, injector pressure drop, chamber pressure, and mass-flow calculations</li>
+          <li>Designing an injector cold-flow test stand around a pressurized nitrogen supply (~150–220 psi) for an upcoming water cold-flow injector test</li>
+          <li>Reviewed and refined a coaxial swirl injector assembly through SolidWorks design checks ahead of fabrication</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">N₂O / Ethanol</span>
+          <span class="spec">250 lbf target</span>
+          <span class="spec">SolidWorks</span>
+          <span class="spec">Cold-Flow Test</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>Kennesaw Rocketry Team</span><span>Dec 2025 – Present</span></div>
+        <span class="stamp-tag build">CAD / Structures</span>
+        <h3>Fin Can &amp; Airframe Fit</h3>
+        <div class="org">Vice President</div>
+        <ul>
+          <li>Resolved fin-to-airframe gap issues on a fin can assembly through iterative SolidWorks CAD corrections</li>
+          <li>Standardized build documentation and coordinated across Rocket Design, Avionics, and Payload subteams as part of administrative leadership</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">SolidWorks</span>
+          <span class="spec">Fit &amp; Tolerance</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>Aerial Robotics Competition Team</span><span>Sep 2023 – Apr 2025</span></div>
+        <span class="stamp-tag build">Team Lead</span>
+        <h3>Powered Autonomous Delivery Aircraft (PADA)</h3>
+        <div class="org">SAE AERO Design — Team Lead, 20+ members</div>
+        <ul>
+          <li>Led the full design, manufacturing, and flight-test lifecycle of a carrier-launched delivery aircraft, from CAD through fabrication and integration</li>
+          <li>Manufactured a carbon fiber mold and performed a wet layup to construct the aircraft's fuselage</li>
+          <li>Built and flew a custom flying wing that detached mid-flight from a larger carrier aircraft and autonomously navigated to landing coordinates it detected in flight</li>
+          <li>Configured and tuned a Matek H743 flight computer to achieve stable flight on an inherently unstable airframe</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">Carbon Fiber Layup</span>
+          <span class="spec">ArduPilot</span>
+          <span class="spec">Matek H743</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>Independent / Lab</span><span>In Progress</span></div>
+        <span class="stamp-tag">Design Phase</span>
+        <h3>Aerodynamic Surface-Treatment Testbed</h3>
+        <div class="org">UAV testbed for evaluating surface treatments</div>
+        <ul>
+          <li>Developing a dedicated testbed UAV with modular wing panels to evaluate surface treatments, including shark-skin riblet films and covert feather-inspired flaps</li>
+          <li>Identified the Heewing T1-S Ranger S (non-VTOL variant) as a candidate base airframe</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">Modular Wings</span>
+          <span class="spec">Riblet Film</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="grid-bg" id="research" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">Sheet 02 — Research</div>
+        <h2>CFD &amp; Aerodynamics</h2>
+      </div>
+      <div class="sec-note">Simulation work validated against wind-tunnel and experimental data, published at AIAA conferences.</div>
+    </div>
+
+    <div class="sheets">
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>Jan 2026 – Present</span></div>
+        <span class="stamp-tag">1st Author ×2</span>
+        <h3>Blended Wing Body vs. RANS CFD</h3>
+        <div class="org">Siemens FlightStream benchmarking</div>
+        <ul>
+          <li>Benchmarking FlightStream against RANS-based CFD for a blended wing body aircraft (BlendedNet++ dataset, Geometry 227; NACA 25118 / NASA SC(2)-0412 / NACA 0012 sections) in collaboration with Siemens</li>
+          <li>Assessing FlightStream's potential to accelerate simulation turnaround for early-stage aircraft concepts</li>
+          <li>Two papers accepted as first-author outputs to AIAA SciTech 2027</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">FlightStream</span>
+          <span class="spec">RANS CFD</span>
+          <span class="spec">AIAA SciTech 2027</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>Sep 2023 – Present</span></div>
+        <span class="stamp-tag">1st Author</span>
+        <h3>Compound Delta Wing CFD</h3>
+        <div class="org">Vortex lift &amp; transonic performance</div>
+        <ul>
+          <li>Executed 140+ CFD simulations in ANSYS Fluent characterizing delta wing performance across velocities and angles of attack, improving lift-to-drag efficiency from 7.24% to 13.57% in the transonic regime</li>
+          <li>Investigated vortex lift modeling through trailing-edge boundary condition treatment; related laminar-regime work in Fluent and OpenFOAM at low Reynolds numbers</li>
+          <li>First-authored a paper presented at the 2025 AIAA Region II Student Conference</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">ANSYS Fluent</span>
+          <span class="spec">OpenFOAM</span>
+          <span class="spec">AIAA Region II</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>KSU × Oklahoma State S2FAR Lab</span><span>Mar 2025 – Present</span></div>
+        <span class="stamp-tag">Co-Author</span>
+        <h3>Control Surface Validation — "Bird" UAV</h3>
+        <div class="org">Multi-fidelity FlightStream validation</div>
+        <ul>
+          <li>Validated FlightStream aileron-deflection load predictions against high-fidelity CFD and WindShape wind-tunnel / load-cell testing on a Group-1 fixed-wing UAV (S2F-BD213)</li>
+          <li>Supported closed-loop roll-axis control validation using a Pixhawk Cube Orange Plus flight controller and a custom MATLAB/Simulink ground control station</li>
+          <li>Co-authored findings published at AIAA SciTech 2026 with Oklahoma State University's S2FAR Lab and Siemens</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">WindShape Tunnel</span>
+          <span class="spec">Pixhawk</span>
+          <span class="spec">AIAA SciTech 2026</span>
+        </div>
+      </div>
+
+      <div class="sheet reveal">
+        <span class="tick-bl"></span><span class="tick-br"></span>
+        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>In Progress</span></div>
+        <span class="stamp-tag">Design Phase</span>
+        <h3>Forward-Facing Cavity PIV Replication</h3>
+        <div class="org">URANS CFD vs. experimental PIV</div>
+        <ul>
+          <li>Running URANS CFD to replicate a forward-facing cylindrical cavity PIV experiment, working through timestep selection and Rossiter mode analysis</li>
+          <li>Coordinating validation questions directly with the study's experimentalist</li>
+        </ul>
+        <div class="specs">
+          <span class="spec">URANS</span>
+          <span class="spec">Rossiter Modes</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">Sheet 03 — Tools</div>
+        <h2>Technical Skills</h2>
+      </div>
+    </div>
+    <div class="skill-grid reveal">
+      <div class="skill-col">
+        <h4>Fabrication &amp; Shop</h4>
+        <p>Sheet metal design &amp; prototyping, 3D printing, laser cutting, composite layup, lathe/mill, CNC machining, foam cutting</p>
+      </div>
+      <div class="skill-col">
+        <h4>CAD Software</h4>
+        <p>SolidWorks, Siemens NX, AutoCAD, ANSYS SpaceClaim</p>
+      </div>
+      <div class="skill-col">
+        <h4>Manufacturing &amp; Design Practice</h4>
+        <p>GD&amp;T, tolerance stack-up analysis, DFA/DFM design reviews, fit checks &amp; build documentation</p>
+      </div>
+      <div class="skill-col">
+        <h4>CFD Software</h4>
+        <p>ANSYS Fluent, SolidWorks Flow Simulation, OpenVSP, FlightStream, ParaView</p>
+      </div>
+      <div class="skill-col">
+        <h4>Programming / Autopilot</h4>
+        <p>MATLAB, Python, ArduPilot, LaTeX, R</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="background:var(--paper-2);" class="grid-bg">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">Sheet 04 — Background</div>
+        <h2>Education</h2>
+      </div>
+    </div>
+    <div class="about-grid reveal">
+      <p>I'm a junior in Mechanical Engineering with an Aerospace Engineering minor at Kennesaw State University, graduating May 2027. My work splits between hands-on hardware — propulsion, airframes, ground support equipment — and CFD research validated against wind-tunnel and experimental data. I'd rather build the test article and run the case than do just one.</p>
+      <div class="edu-block">
+        <div class="edu-row"><span class="k">Institution</span><span class="v">Kennesaw State University</span></div>
+        <div class="edu-row"><span class="k">Degree</span><span class="v">B.S. Mechanical Engineering</span></div>
+        <div class="edu-row"><span class="k">Minor</span><span class="v">Aerospace Engineering</span></div>
+        <div class="edu-row"><span class="k">GPA</span><span class="v">3.81 / 4.0</span></div>
+        <div class="edu-row"><span class="k">Graduation</span><span class="v">May 2027 (Anticipated)</span></div>
+        <div class="edu-row"><span class="k">Coursework</span><span class="v">Aircraft Design, CAE, Aerodynamics, Fluid Dynamics, Heat Transfer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="foot-grid">
+    <div>
+      <h3>Let's talk hardware.</h3>
+      <p style="max-width:34ch; font-size:14.5px; margin-top:6px;">Open to design &amp; manufacturing roles, internships, and research collaboration.</p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:drew.marion03@gmail.com">drew.marion03@gmail.com</a>
+      <a href="tel:6786159817">678-615-9817</a>
+      <span>Marietta, GA</span>
+      <span>LinkedIn — Andrew Marion</span>
+      <span>Google Scholar — Andrew Marion</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Andrew Marion — Mechanical &amp; Aerospace Engineering</span>
+    <span>Sheet 01 of 01 · Rev. A · 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
