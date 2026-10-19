@@ -208,3 +208,53 @@ footer .contact-list a:hover{ color:var(--red);}
   html{ scroll-behavior:auto;}
   .reveal{ transition:none; opacity:1; transform:none;}
 }
+
+/* ============ HIKING MAP (About page) ============ */
+.hm-lead{ font-size:15px; color:var(--ink-soft); max-width:62ch; margin:4px 0 22px;}
+.hikemap{ display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:24px; align-items:start;}
+.hm-main{ min-width:0;}
+.hm-stage{ position:relative; background:#1b1f23; border:1px solid var(--gray-line); height:560px; overflow:hidden;}
+.hm-map{ position:absolute; inset:0;}
+.hm-stage.is-fallback{ background:var(--gray-bg); height:auto; padding:16px 16px 10px;}
+.hm-stage.is-fallback .hm-map{ position:static;}
+.hm-ui{ position:absolute; top:10px; left:10px; z-index:2; display:flex; gap:6px; flex-wrap:wrap;}
+.hm-stage.is-fallback .hm-ui{ position:static; margin-bottom:10px;}
+.hm-btn{ font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:#fff; color:var(--ink); border:1px solid var(--gray-line); padding:7px 12px; cursor:pointer;}
+.hm-btn[aria-pressed="true"]{ background:var(--black); color:#fff; border-color:var(--black);}
+.hm-btn:hover{ border-color:var(--red);}
+.hm-btn:focus-visible, .hm-pin:focus-visible, .hm-thumb:focus-visible, .hm-switch button:focus-visible{ outline:2px solid var(--red); outline-offset:2px;}
+.hm-hint{ font-size:13px; color:var(--ink-soft); margin-top:10px;}
+.hm-pin{ width:28px; height:28px; border-radius:50%; background:var(--red); color:#fff; border:2px solid #fff; font-family:var(--sans); font-size:12px; font-weight:700; cursor:pointer; box-shadow:0 1px 6px rgba(0,0,0,.5); transition:transform .15s, background .15s;}
+.hm-pin:hover, .hm-pin.on{ background:var(--black); transform:scale(1.2);}
+.hm-detail{ min-width:0; border:1px solid var(--gray-line); background:#fff;}
+.hm-empty{ padding:28px 22px; color:var(--ink-soft); font-size:14.5px;}
+.hm-viewer{ background:var(--gray-bg); aspect-ratio:4/3; overflow:hidden;}
+.hm-viewer img{ width:100%; height:100%; object-fit:cover; display:block;}
+.hm-info{ padding:16px 18px 18px;}
+.hm-top{ display:flex; justify-content:space-between; gap:12px; font-family:var(--sans); font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red); margin-bottom:6px;}
+.hm-info h3{ font-family:var(--display); font-size:1.3rem; font-weight:600; text-transform:uppercase; color:var(--ink); margin-bottom:6px; text-wrap:balance;}
+.hm-note{ font-size:14.5px; color:var(--ink); margin-bottom:10px;}
+.hm-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.hm-chips span{ font-family:var(--sans); font-size:11.5px; font-weight:600; color:var(--ink-soft); background:var(--gray-bg); padding:5px 10px; font-variant-numeric:tabular-nums;}
+.hm-switch{ display:flex; gap:8px; margin-top:14px;}
+.hm-switch button{ width:56px; height:42px; padding:0; border:2px solid transparent; background:none; cursor:pointer; opacity:.7;}
+.hm-switch button.on{ border-color:var(--red); opacity:1;}
+.hm-switch img{ width:100%; height:100%; object-fit:cover; display:block;}
+.hm-strip{ grid-column:1 / -1; display:grid; grid-template-columns:repeat(11, minmax(0,1fr)); gap:8px;}
+.hm-thumb{ position:relative; aspect-ratio:1; padding:0; border:2px solid transparent; background:var(--gray-bg); cursor:pointer; overflow:hidden;}
+.hm-thumb img{ width:100%; height:100%; object-fit:cover; display:block;}
+.hm-thumb span{ position:absolute; left:0; top:0; background:var(--red); color:#fff; font:700 11px var(--sans); padding:2px 6px;}
+.hm-thumb.on{ border-color:var(--red);}
+.fb-map{ width:100%; height:auto; display:block;}
+.fb-map .nation{ fill:#E6E6E6; stroke:#C9C9C9; stroke-width:1;}
+.fb-map .borders{ fill:none; stroke:#fff; stroke-width:.8; stroke-linejoin:round;}
+.fb-pin{ cursor:pointer; outline:none;}
+.fb-pin .hit{ fill:transparent;}
+.fb-pin .dot{ fill:var(--red); stroke:#fff; stroke-width:1.6;}
+.fb-pin text{ font-family:var(--sans); font-weight:700; font-size:11px; fill:var(--ink); paint-order:stroke; stroke:#E6E6E6; stroke-width:3px; pointer-events:none;}
+.fb-pin:hover .dot, .fb-pin:focus .dot, .fb-pin.on .dot{ r:6.4; fill:var(--black);}
+@media (max-width:900px){
+  .hikemap{ grid-template-columns:1fr;}
+  .hm-stage{ height:420px;}
+  .hm-strip{ grid-template-columns:repeat(6, minmax(0,1fr));}
+}
