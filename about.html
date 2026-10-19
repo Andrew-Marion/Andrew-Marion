@@ -85,20 +85,9 @@
     </div>
 
     <div class="sec-head reveal" style="margin-top:56px;">
-      <div><div class="sec-num">Off the Clock</div><h2 class="sec-title">Hobbies</h2></div>
+      <div><h2 class="sec-title">Hiking</h2></div>
     </div>
-
-    <div class="skill-grid reveal" style="margin-top:0;">
-      <div class="skill-col">
-        <h4>Hiking</h4>
-        <p>I enjoy hiking. The map below shows where my photos were taken.</p>
-      </div>
-    </div>
-
-    <div class="sec-head reveal" style="margin-top:56px;">
-      <div><div class="sec-num">Hiking Map</div><h2 class="sec-title">Where I've Hiked</h2></div>
-    </div>
-    <p class="hm-lead reveal">Spin the terrain, zoom in, and select a pin to see the photos from that spot. Each location comes from the GPS tag stored in the photo.</p>
+    <p class="hm-lead reveal">Spin the terrain, zoom in, and select a pin to see the photos from that spot.</p>
 
     <div class="hikemap reveal" id="hikemap">
       <div class="hm-main">
@@ -123,9 +112,10 @@
       var STOPS = [{"id": 1, "name": "Appalachian Trail, Georgia", "state": "Georgia", "lat": 34.66996, "lng": -84.02097, "photos": [{"src": "img/hiking/appalachian-trail-georgia.jpg", "alt": "View from a rocky ledge on the Appalachian Trail in Georgia across forested ridges", "note": "Hiking the Georgia section of the Appalachian Trail: ridge after ridge of bare spring hardwoods from a rock ledge.", "date": "Apr 3, 2023", "coord": "34.67° N, 84.02° W", "el": "3,230 ft"}]}, {"id": 2, "name": "North Georgia Waterfall", "state": "Georgia", "lat": 34.82225, "lng": -83.72202, "photos": [{"src": "img/hiking/georgia-waterfall.jpg", "alt": "A damp dog in the foreground with a waterfall behind in the North Georgia forest", "note": "A cascade over mossy slabs, with a wet-whiskered photobomber.", "date": "Sep 22, 2024", "coord": "34.82° N, 83.72° W", "el": "2,417 ft"}]}, {"id": 3, "name": "Bonneville Salt Flats", "state": "Utah", "lat": 40.74439, "lng": -113.85165, "photos": [{"src": "img/hiking/bonneville-salt-flats.jpg", "alt": "Hexagonal salt crust on the Bonneville Salt Flats at sunset with dark mountains behind", "note": "Cracked salt polygons running out to the horizon at dusk.", "date": "Mar 9, 2026", "coord": "40.74° N, 113.85° W", "el": null}]}, {"id": 4, "name": "Antelope Island State Park", "state": "Utah", "lat": 40.98994, "lng": -112.20132, "photos": [{"src": "img/hiking/antelope-island-bison.jpg", "alt": "Bison grazing among sagebrush beside a trail on Antelope Island", "note": "Bison grazing the sagebrush slope above the lake shore.", "date": "Mar 10, 2026", "coord": "41.06° N, 112.24° W", "el": "4,260 ft"}, {"src": "img/hiking/antelope-island-wasatch.jpg", "alt": "Snow-covered Wasatch peaks seen across golden grassland and bare trees", "note": "Snow on the Wasatch across a field of winter grass.", "date": "Mar 10, 2026", "coord": "40.92° N, 112.17° W", "el": "4,217 ft"}]}, {"id": 5, "name": "Valley of Fire State Park", "state": "Nevada", "lat": 36.44697, "lng": -114.50848, "photos": [{"src": "img/hiking/valley-of-fire.jpg", "alt": "Red sandstone canyon and domes in Valley of Fire State Park", "note": "Red sandstone folds under a flat blue sky.", "date": "Mar 12, 2026", "coord": "36.45° N, 114.51° W", "el": "2,070 ft"}]}, {"id": 6, "name": "Palo Duro Canyon State Park", "state": "Texas", "lat": 34.98206, "lng": -101.69015, "photos": [{"src": "img/hiking/palo-duro-canyon.jpg", "alt": "Palo Duro Canyon seen from a limestone outcrop on the rim", "note": "The canyon rim in the early morning, red clay and juniper below.", "date": "Aug 11, 2026", "coord": "34.98° N, 101.69° W", "el": "3,362 ft"}]}, {"id": 7, "name": "Angel Peak Scenic Area", "state": "New Mexico", "lat": 36.52375, "lng": -107.93394, "photos": [{"src": "img/hiking/angel-peak.jpg", "alt": "Badlands at Angel Peak Scenic Area under a sunset sky with an approaching storm", "note": "Gray badlands and a storm front at sunset.", "date": "Aug 11, 2026", "coord": "36.52° N, 107.93° W", "el": "6,558 ft"}]}, {"id": 8, "name": "Ice Lake Basin", "state": "Colorado", "lat": 37.81481, "lng": -107.80502, "photos": [{"src": "img/hiking/ice-lake-basin.jpg", "alt": "Narrow dirt trail through an alpine meadow toward a blue lake beneath dark clouds", "note": "The trail dropping toward Ice Lake as a storm builds over the ridge.", "date": "Aug 12, 2026", "coord": "37.81° N, 107.81° W", "el": "12,326 ft"}]}, {"id": 9, "name": "The Ledges, Cuyahoga Valley National Park", "state": "Ohio", "lat": 41.22698, "lng": -81.50902, "photos": [{"src": "img/hiking/cuyahoga-ledges.jpg", "alt": "Layered, moss-covered sandstone ledges beneath tall hemlock trees with hikers at the base", "note": "Moss-covered sandstone ledges under tall hemlocks.", "date": "Sep 4, 2026", "coord": "41.23° N, 81.51° W", "el": "1,032 ft"}]}, {"id": 10, "name": "Portage Pass", "state": "Alaska", "lat": 60.76811, "lng": -148.74654, "photos": [{"src": "img/hiking/portage-pass.jpg", "alt": "Portage Glacier seen from rocky tundra at Portage Pass under heavy clouds", "note": "Portage Glacier from the pass, ice lit through a gap in the clouds.", "date": "Oct 9, 2026", "coord": "60.77° N, 148.75° W", "el": "766 ft"}]}, {"id": 11, "name": "Exit Glacier", "state": "Alaska", "lat": 60.18036, "lng": -149.63969, "photos": [{"src": "img/hiking/exit-glacier.jpg", "alt": "Glacial meltwater river and boulder field below Exit Glacier in Alaska", "note": "Meltwater river and loose rock leading up to Exit Glacier.", "date": "Oct 10, 2026", "coord": "60.18° N, 149.64° W", "el": "426 ft"}]}];
       var $ = function(id){ return document.getElementById(id); };
       var detail = $('hm-detail'), strip = $('hm-strip'), mapEl = $('hm-map'), stage = $('hm-stage'), hint = $('hm-hint');
-      var current = null, photoIdx = 0, map = null, pins = {}, fallback = false;
+      var current = 10, photoIdx = 0, map = null, pins = {}, fallback = false;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var HOME = { center: [-98.5, 38.5], zoom: 3.1, pitch: 30, bearing: 0 };
+      var BOUNDS = [[-156, 22], [-76, 64]];
+      var ALL = []; STOPS.forEach(function(s){ s.photos.forEach(function(_, i){ ALL.push({ id: s.id, i: i }); }); });
       var BEARINGS = [20, -30, 15, -20, 35, -25, 40, -35, 10, 30, -15];
 
       function esc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -154,10 +144,13 @@
           }).join('') + '</div>';
         }
         detail.innerHTML =
-          '<div class="hm-viewer"><img src="' + p.src + '" alt="' + esc(p.alt) + '"></div>' +
+          '<div class="hm-viewer"><img src="' + p.src + '" alt="' + esc(p.alt) + '">' +
+          '<button type="button" class="hm-arrow prev" aria-label="Previous photo">&#8249;</button><button type="button" class="hm-arrow next" aria-label="Next photo">&#8250;</button></div>' +
           '<div class="hm-info"><div class="hm-top"><span>Stop ' + pad(s.id) + ' &middot; ' + esc(s.state) + '</span><span>' + esc(p.date) + '</span></div>' +
           '<h3>' + esc(s.name) + '</h3><p class="hm-note">' + esc(p.note) + '</p>' +
           '<div class="hm-chips"><span>' + esc(p.coord) + '</span>' + (p.el ? '<span>' + esc(p.el) + '</span>' : '') + '</div>' + sw + '</div>';
+        detail.querySelector('.prev').addEventListener('click', function(){ step(-1); });
+        detail.querySelector('.next').addEventListener('click', function(){ step(1); });
         Array.prototype.forEach.call(detail.querySelectorAll('.hm-switch button'), function(b){
           b.addEventListener('click', function(){ photoIdx = +b.dataset.i; render(); });
         });
@@ -180,9 +173,15 @@
         }
       }
 
+      function step(d){
+        var k = 0;
+        for (var j = 0; j < ALL.length; j++) if (ALL[j].id === current && ALL[j].i === photoIdx) k = j;
+        var n = ALL[(k + d + ALL.length) % ALL.length];
+        if (n.id === current){ photoIdx = n.i; render(); }
+        else { select(n.id, true); photoIdx = n.i; render(); }
+      }
       function resetView(){
-        current = null; render(); mark();
-        if (map){ map.flyTo({ center: HOME.center, zoom: HOME.zoom, pitch: HOME.pitch, bearing: HOME.bearing, duration: reduce ? 0 : 2400, essential: true }); }
+        if (map){ map.fitBounds(BOUNDS, { padding: 24, pitch: 0, bearing: 0, duration: reduce ? 0 : 2400, essential: true }); }
       }
       $('hm-reset').addEventListener('click', resetView);
 
@@ -227,8 +226,8 @@
             ],
             terrain: { source: 'dem', exaggeration: 1.5 }
           },
-          center: HOME.center, zoom: HOME.zoom, pitch: HOME.pitch, bearing: HOME.bearing,
-          minZoom: 2, maxPitch: 80, hash: false, cooperativeGestures: false
+          bounds: BOUNDS, fitBoundsOptions: { padding: 24 }, pitch: 0, bearing: 0,
+          minZoom: 1.5, maxPitch: 80, hash: false, cooperativeGestures: false
         });
         map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
         map.addControl(new maplibregl.ScaleControl({ unit: 'imperial' }), 'bottom-left');
@@ -249,6 +248,7 @@
         }
         $('hm-sat').addEventListener('click', function(){ base('sat'); });
         $('hm-topo').addEventListener('click', function(){ base('topo'); });
+        mark();
       }
 
       render();

@@ -258,3 +258,8 @@ footer .contact-list a:hover{ color:var(--red);}
   .hm-stage{ height:420px;}
   .hm-strip{ grid-template-columns:repeat(6, minmax(0,1fr));}
 }
+.hm-viewer{ position:relative;}
+.hm-arrow{ position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; border:0; background:rgba(31,31,31,.72); color:#fff; font-size:28px; line-height:1; padding-bottom:4px; cursor:pointer;}
+.hm-arrow.prev{ left:10px;} .hm-arrow.next{ right:10px;}
+.hm-arrow:hover{ background:var(--red);}
+.hm-arrow:focus-visible{ outline:2px solid #fff; outline-offset:2px;}
