@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png?v=2" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -100,10 +100,47 @@
         <div class="specs"><span class="spec">N₂O / Ethanol</span><span class="spec">250 lbf target</span><span class="spec">SolidWorks</span><span class="spec">Cold-Flow Test</span></div>
       </div>
 
+      <div class="sheet reveal" id="isr-uav">
+        <div class="photo-slot">
+          <img src="img/isr-uav-cad.jpg" style="object-fit:contain" alt="CAD render of a tailless swept flying-wing UAV with wingtip underwater thruster pods and red fuel and ballast tanks">
+          <span class="fig">Fig. 04</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>Aircraft Design and Performance — Team of 4</span><span>Spring 2026</span></div>
+        <span class="stamp-tag build">Conceptual Design</span>
+        <h3>Ship-Launched Multi-Domain ISR UAV</h3>
+        <div class="org">ENGR 3802 &middot; Advisor: Dr. Gaurav Sharma &middot; Responsible for airfoil selection, CAD/CFD, and final sizing</div>
+        <ul>
+          <li>Designed a ship-launched, tailless flying-wing UAV for intelligence, surveillance, and reconnaissance (ISR) in both the air and underwater: 15.4 ft span, 40&deg; leading-edge sweep, 2,050 lb takeoff weight, and a single internal PW610 turbofan</li>
+          <li>Met every requirement with margin: 1,060 NMi range against 1,000 NMi, 47 min loiter against 30 min, and 89 kt stall speed against a 97 kt limit, with a cruise L/D of 13.5 at Mach 0.7</li>
+          <li>Developed the dual-domain transition: sealing doors close the engine inlet and exhaust, the aircraft lands on water in a deep stall at about 10&deg; pitch, wing-root fuel tanks flood to serve as ballast, and retractable wingtip thrusters drive underwater transit to a recovery vessel</li>
+          <li>Selected a spanwise airfoil blend from a thick centerbody to a thin tip for transonic efficiency and internal volume, and ran four-concept trade studies on aerodynamic efficiency, stealth, structural complexity, stability, and dual-domain capability</li>
+          <li>Chose a hybrid CFRP and aluminum 5083 structure with Inconel in the exhaust region and EPDM seals, and identified water-landing slamming loads as the primary risk for follow-on FEA and drop testing</li>
+        </ul>
+        <div class="specs"><span class="spec">Conceptual Design</span><span class="spec">Aircraft Sizing</span><span class="spec">Airfoil Selection</span><span class="spec">CAD / CFD</span><span class="spec">Trade Studies</span><span class="spec">Flying Wing</span></div>
+      </div>
+
+      <div class="sheet reveal" id="pumpkin-launch">
+        <div class="photo-slot">
+          <img src="img/pumpkin-trebuchet.jpg" style="object-fit:contain" alt="The 12 ft pumpkin-launching trebuchet at Kennesaw State, decorated for Halloween with tombstones and spider webs">
+          <span class="fig">Fig. 05</span>
+          <span class="instr">+ Add Photo</span>
+        </div>
+        <div class="sheet-top"><span>Dynamics — Kennesaw State University</span><span>Fall 2024</span></div>
+        <span class="stamp-tag build">Course Project</span>
+        <h3>Pumpkin Launch Trebuchet</h3>
+        <div class="org">Design, build, and launch</div>
+        <ul>
+          <li>Designed and built a 12 ft trebuchet with a 6 ft arm and a 200 lb counterweight, capable of launching 15 lb pumpkins</li>
+          <li>Used dynamics analysis to size the design</li>
+        </ul>
+        <div class="specs"><span class="spec">Dynamics</span><span class="spec">Mechanism Design</span><span class="spec">Wood Construction</span><span class="spec">Counterweight Sizing</span></div>
+      </div>
+
       <div class="sheet reveal" id="gis-mapping">
         <div class="photo-slot">
           <img src="img/dispersed-camp-map.jpg" alt="Dispersed Camp Map showing color-coded public land, trails, and camping areas across North America">
-          <span class="fig">Fig. 04</span>
+          <span class="fig">Fig. 06</span>
           <span class="instr">+ Add Photo</span>
         </div>
         <div class="sheet-top"><span>Personal Projects</span><span>Oct 2026 – Present</span></div>
@@ -114,7 +151,7 @@
           <li>Built the Dispersed Camp Map, a single-file Leaflet web app that overlays color-coded public land (BLM, Forest Service, parks, state, tribal, military) from the BLM Surface Management Agency data, so tapping any spot shows who manages it</li>
           <li>Integrated multiple GIS data sources: US Forest Service trails and road-use maps, Ontario and BC Crown land, wildfire perimeters, and OpenStreetMap campsites, water points, and cell towers</li>
           <li>Added offline regions with USGS topo tiles, GPS track recording with GPX export, and saved pins with photos, ratings, and signal notes, all stored on the device</li>
-          <li>Packaged it as an installable progressive web app for iPhone and Android, with a service worker so it launches with no signal and a locked full-screen layout with no page scrolling or accidental zoom</li>
+          <li>Packaged it as an installable progressive web app for iPhone and Android, with a service worker so it launches with no signal</li>
           <li>Built an interactive 3D terrain map of my hiking photos in MapLibre GL JS: a Python script reads the GPS coordinates, elevation, and timestamp from each photo's EXIF metadata to place the pins, with satellite imagery over open elevation data, hillshading, and preloaded tiles for smooth camera flights between stops</li>
         </ul>
         <div class="specs"><span class="spec">GIS</span><span class="spec">Leaflet</span><span class="spec">MapLibre GL JS</span><span class="spec">Digital Elevation Models</span><span class="spec">EXIF / GPS Data</span><span class="spec">Offline PWA</span><span class="spec">Python</span><span class="spec">JavaScript</span></div>
@@ -138,6 +175,7 @@
       <a href="https://www.linkedin.com/in/andrew-marion/" target="_blank" rel="noopener">LinkedIn — Andrew Marion</a>
       <a href="https://www.researchgate.net/profile/Andrew-Marion" target="_blank" rel="noopener">ResearchGate — Andrew Marion</a>
       <a href="Andrew_Marion_Resume.pdf" target="_blank" rel="noopener">Resume — PDF</a>
+      <a href="Andrew_Marion_CV.pdf" target="_blank" rel="noopener">CV — PDF</a>
     </div>
   </div>
   <div class="foot-bottom">
