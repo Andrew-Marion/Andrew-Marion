@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -97,39 +100,25 @@
         <div class="specs"><span class="spec">N₂O / Ethanol</span><span class="spec">250 lbf target</span><span class="spec">SolidWorks</span><span class="spec">Cold-Flow Test</span></div>
       </div>
 
-      <div class="sheet reveal" id="terrain-map">
+      <div class="sheet reveal" id="gis-mapping">
         <div class="photo-slot">
-          <img src="img/hiking-map-overview.jpg" style="object-fit:contain" alt="Flat map of the United States with numbered pins at hiking photo locations">
+          <img src="img/dispersed-camp-map.jpg" alt="Dispersed Camp Map showing color-coded public land, trails, and camping areas across North America">
           <span class="fig">Fig. 04</span>
           <span class="instr">+ Add Photo</span>
         </div>
-        <div class="sheet-top"><span>Personal Project</span><span>Oct 2026</span></div>
+        <div class="sheet-top"><span>Personal Projects</span><span>Oct 2026 – Present</span></div>
         <span class="stamp-tag build">GIS / Mapping</span>
-        <h3>Interactive 3D Terrain Map of My Hikes</h3>
-        <div class="org">Built from terrain elevation data and GPS metadata in my own photos</div>
+        <h3>GIS Mapping: Dispersed Camp Map and 3D Hiking Terrain Map</h3>
+        <div class="org">Web maps built from open geospatial data, terrain elevation data, and GPS metadata</div>
         <ul>
-          <li>Wrote a Python script that reads the GPS coordinates, elevation, and timestamp embedded in each hiking photo's EXIF metadata and uses them to place a pin for every stop, then strips the metadata from the web copies</li>
-          <li>Built an interactive map in MapLibre GL JS with satellite imagery draped over 3D terrain from open elevation tiles, with hillshading, rotate, tilt, and zoom, and camera flights between stops</li>
-          <li>Preloads the terrain and imagery tiles around each stop so the view stays smooth when stepping through photos</li>
-          <li>Added a flat map fallback, projected with d3-geo (Albers USA), for devices without WebGL or a network connection to the tile servers</li>
-        </ul>
-        <div class="specs"><span class="spec">GIS</span><span class="spec">Digital Elevation Models</span><span class="spec">EXIF / GPS Data</span><span class="spec">MapLibre GL JS</span><span class="spec">Python</span><span class="spec">JavaScript</span></div>
-        <p style="margin-top:14px;"><a href="about.html#hikemap">View the interactive map &rarr;</a></p>
-      </div>
-
-      <div class="sheet reveal" id="camp-map">
-        <div class="sheet-top"><span>Personal Project</span><span>Oct 2026 – Present</span></div>
-        <span class="stamp-tag build">GIS / Web App</span>
-        <h3>Dispersed Camp Map</h3>
-        <div class="org">Offline-capable web map for finding public land, trails, and water across the US and Canada</div>
-        <ul>
-          <li>Built a single-file Leaflet web app that overlays color-coded public land (BLM, Forest Service, parks, state, tribal, military) from the BLM Surface Management Agency data, so tapping any spot shows who manages it</li>
+          <li>Built the Dispersed Camp Map, a single-file Leaflet web app that overlays color-coded public land (BLM, Forest Service, parks, state, tribal, military) from the BLM Surface Management Agency data, so tapping any spot shows who manages it</li>
           <li>Integrated multiple GIS data sources: US Forest Service trails and road-use maps, Ontario and BC Crown land, wildfire perimeters, and OpenStreetMap campsites, water points, and cell towers</li>
           <li>Added offline regions with USGS topo tiles, GPS track recording with GPX export, and saved pins with photos, ratings, and signal notes, all stored on the device</li>
-          <li>Packaged it as an installable progressive web app for iPhone and Android, with a service worker so it launches with no signal, a locked full-screen layout with no page scrolling or accidental zoom, and a Node build script that bundles the map, basemap data, and Leaflet into one HTML file</li>
+          <li>Packaged it as an installable progressive web app for iPhone and Android, with a service worker so it launches with no signal and a locked full-screen layout with no page scrolling or accidental zoom</li>
+          <li>Built an interactive 3D terrain map of my hiking photos in MapLibre GL JS: a Python script reads the GPS coordinates, elevation, and timestamp from each photo's EXIF metadata to place the pins, with satellite imagery over open elevation data, hillshading, and preloaded tiles for smooth camera flights between stops</li>
         </ul>
-        <div class="specs"><span class="spec">GIS</span><span class="spec">Leaflet</span><span class="spec">JavaScript</span><span class="spec">Offline PWA</span><span class="spec">GPX</span><span class="spec">Open Geospatial Data</span></div>
-        <p style="margin-top:14px;"><a href="https://andrew-marion.github.io/dispersed-camp-map/" target="_blank" rel="noopener">Open the app &rarr;</a> &nbsp;&middot;&nbsp; <a href="https://github.com/Andrew-Marion/dispersed-camp-map" target="_blank" rel="noopener">View on GitHub &rarr;</a></p>
+        <div class="specs"><span class="spec">GIS</span><span class="spec">Leaflet</span><span class="spec">MapLibre GL JS</span><span class="spec">Digital Elevation Models</span><span class="spec">EXIF / GPS Data</span><span class="spec">Offline PWA</span><span class="spec">Python</span><span class="spec">JavaScript</span></div>
+        <p style="margin-top:14px;"><a href="https://andrew-marion.github.io/dispersed-camp-map/" target="_blank" rel="noopener">Open the Dispersed Camp Map &rarr;</a> &nbsp;&middot;&nbsp; <a href="https://github.com/Andrew-Marion/dispersed-camp-map" target="_blank" rel="noopener">GitHub &rarr;</a> &nbsp;&middot;&nbsp; <a href="about.html#hikemap">3D Hiking Terrain Map &rarr;</a></p>
       </div>
 
     </div>
