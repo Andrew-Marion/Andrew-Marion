@@ -76,6 +76,9 @@ h1{
   background:var(--red); color:#fff; border:1px solid var(--red); transition:all .15s; margin-top:28px;
 }
 .btn:hover{ background:#8f0000; border-color:#8f0000;}
+.btn.btn-outline{ background:transparent; color:var(--red); margin-left:8px;}
+.btn.btn-outline:hover{ background:var(--red); color:#fff; border-color:var(--red);}
+@media (max-width:600px){ .btn.btn-outline{ margin-left:0; margin-top:8px;} }
 
 /* ============ FEED (Home page project stream) ============ */
 .feed{ padding:20px 24px 70px; max-width:760px; margin:0 auto;}
