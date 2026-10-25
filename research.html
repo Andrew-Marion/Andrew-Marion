@@ -98,21 +98,22 @@
         <div class="specs"><span class="spec">WindShape Tunnel</span><span class="spec">AIAA SciTech 2026</span></div>
       </div>
 
-      <div class="sheet reveal">
+      <div class="sheet reveal" id="propeller">
         <div class="photo-slot">
-          <img src="img/forward-cavity-piv-cfd.jpg" style="object-fit:contain" alt="URANS CFD velocity contour of flow over a forward-facing cylindrical cavity">
+          <img src="img/propeller-windshape-setup.jpg" style="object-fit:contain" alt="Isolated propeller test setup at the WindShape fan-array facility, with a six-axis force balance, aeroprobe, and freestream direction labeled">
           <span class="fig">Fig. 04</span>
           <span class="instr">+ Add Photo</span>
         </div>
-        <div class="sheet-top"><span>KSU Advanced Aerodynamics &amp; Propulsion Lab</span><span>In Progress</span></div>
-        <span class="stamp-tag">Design Phase</span>
-        <h3>Forward-Facing Cavity PIV Replication</h3>
-        <div class="org">URANS CFD vs. experimental PIV</div>
+        <div class="sheet-top"><span>KSU × Oklahoma State S2FAR Lab × Siemens</span><span>In Progress</span></div>
+        <span class="stamp-tag">1st Author</span>
+        <h3>Tilt-Wing Propeller Modeling with Experimental Validation</h3>
+        <div class="org">Mid-fidelity FlightStream vs. blade element theory vs. WindShape wind-tunnel data</div>
         <ul>
-          <li>Running URANS CFD to replicate a forward-facing cylindrical cavity PIV experiment, working through timestep selection and Rossiter mode analysis</li>
-          <li>Coordinating validation of experiments including vorticity and velocity distribution</li>
+          <li>Modeling an APC 16×10E propeller for tilt-wing and tilt-prop VTOL UAVs in Simcenter FlightStream by physically rotating the blade model with the unsteady surface-vorticity solver, compared against a blade element model with Pitt–Peters dynamic inflow</li>
+          <li>Validating against six-component force-balance measurements from the WindShape facility at OSU–Tulsa, covering thrust angle inclinations from 0° to 180° in 15° steps at 3000, 4000, and 5000 RPM</li>
+          <li>Verified the reconstructed blade geometry against a 3D scan of the test propeller, and is running sensitivity studies on time step, mesh, and wake settings before the full test matrix</li>
         </ul>
-        <div class="specs"><span class="spec">URANS</span><span class="spec">Rossiter Modes</span></div>
+        <div class="specs"><span class="spec">FlightStream</span><span class="spec">Blade Element Theory</span><span class="spec">WindShape Tunnel</span><span class="spec">Tilt-Wing VTOL</span></div>
       </div>
 
     </div>
