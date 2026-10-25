@@ -117,6 +117,21 @@
         <p style="margin-top:14px;"><a href="about.html#hikemap">View the interactive map &rarr;</a></p>
       </div>
 
+      <div class="sheet reveal" id="camp-map">
+        <div class="sheet-top"><span>Personal Project</span><span>Oct 2026 – Present</span></div>
+        <span class="stamp-tag build">GIS / Web App</span>
+        <h3>Dispersed Camp Map</h3>
+        <div class="org">Offline-capable web map for finding public land, trails, and water across the US and Canada</div>
+        <ul>
+          <li>Built a single-file Leaflet web app that overlays color-coded public land (BLM, Forest Service, parks, state, tribal, military) from the BLM Surface Management Agency data, so tapping any spot shows who manages it</li>
+          <li>Integrated multiple GIS data sources: US Forest Service trails and road-use maps, Ontario and BC Crown land, wildfire perimeters, and OpenStreetMap campsites, water points, and cell towers</li>
+          <li>Added offline regions with USGS topo tiles, GPS track recording with GPX export, and saved pins with photos, ratings, and signal notes, all stored on the device</li>
+          <li>Packaged it as an installable progressive web app for iPhone and Android, with a service worker so it launches with no signal, a locked full-screen layout with no page scrolling or accidental zoom, and a Node build script that bundles the map, basemap data, and Leaflet into one HTML file</li>
+        </ul>
+        <div class="specs"><span class="spec">GIS</span><span class="spec">Leaflet</span><span class="spec">JavaScript</span><span class="spec">Offline PWA</span><span class="spec">GPX</span><span class="spec">Open Geospatial Data</span></div>
+        <p style="margin-top:14px;"><a href="https://andrew-marion.github.io/dispersed-camp-map/" target="_blank" rel="noopener">Open the app &rarr;</a> &nbsp;&middot;&nbsp; <a href="https://github.com/Andrew-Marion/dispersed-camp-map" target="_blank" rel="noopener">View on GitHub &rarr;</a></p>
+      </div>
+
     </div>
   </div>
 </section>
